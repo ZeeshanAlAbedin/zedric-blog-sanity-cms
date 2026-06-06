@@ -4,6 +4,7 @@ When cloning the repo, we need to create a sanity.config.ts file as well
 
 below are the content of this file 
 
+```typescript
 import {defineConfig} from 'sanity'
 import {structureTool} from 'sanity/structure'
 import {visionTool} from '@sanity/vision'
@@ -22,3 +23,4 @@ export default defineConfig({
     types: schemaTypes,
   },
 })
+```
