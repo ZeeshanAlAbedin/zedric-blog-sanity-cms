@@ -1,9 +1,24 @@
-# Sanity Clean Content Studio
+# Sanity CMS Backend code
 
-Congratulations, you have now installed the Sanity Content Studio, an open-source real-time content editing environment connected to the Sanity backend.
+When cloning the repo, we need to create a sanity.config.ts file as well
 
-Now you can do the following things:
+below are the content of this file 
 
-- [Read “getting started” in the docs](https://www.sanity.io/docs/introduction/getting-started?utm_source=readme)
-- [Join the Sanity community](https://www.sanity.io/community/join?utm_source=readme)
-- [Extend and build plugins](https://www.sanity.io/docs/content-studio/extending?utm_source=readme)
+import {defineConfig} from 'sanity'
+import {structureTool} from 'sanity/structure'
+import {visionTool} from '@sanity/vision'
+import {schemaTypes} from './schemaTypes'
+
+export default defineConfig({
+  name: 'default',
+  title: 'NAME',
+
+  projectId: 'PROJECT_ID',
+  dataset: 'production',
+
+  plugins: [structureTool(), visionTool()],
+
+  schema: {
+    types: schemaTypes,
+  },
+})
